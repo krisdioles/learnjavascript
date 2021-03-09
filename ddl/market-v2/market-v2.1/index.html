@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market v2.1</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Filter</legend>
+            <p>
+                Nama : <input type="text" id="filterNama" placeholder="Nama" onkeyup="funcFilterNama(event)"/>
+            </p>
+
+            <p>
+                Harga : <input type="number" id="filterMin" placeholder="Harga Minimum"/> - <input type="number" id="filterMax" placeholder="Harga Maksimum"/>
+            </p>
+
+            <p>
+                Category :
+                <select name="category" id="filterCategory"></select>
+            </p>
+
+            <input type="button" value="Reset" onclick="filterReset()" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Input Data</legend>
+            <table>
+                <td>
+                    <input type="text" id="inputNama" placeholder="Nama"/>
+                </td>
+                <td>
+                    <input type="number" id="inputHarga" placeholder="Harga"/>
+                </td>
+                <td>
+                    <select name="category" id="inputCategory"></select>
+                </td>
+                <td>
+                    <input type="text" id="inputStock" placeholder="Stock">
+                </td>
+            </table>
+
+            <br>
+            <input type="button" value="Input" onclick="inputData()"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tabel Data</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Nama</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelDataBody"></tbody>
+            </table>
+        </fieldset>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>
